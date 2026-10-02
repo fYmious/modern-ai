@@ -1,5 +1,15 @@
 #show link: underline
 
+#let img(imgPath, caption) = {
+  align(center)[
+    #figure(
+      image(imgPath),
+      caption: caption,
+      supplement: [Рис.],
+    )
+  ]
+}
+
 #set page(
   paper: "a4",
   numbering: "1",
