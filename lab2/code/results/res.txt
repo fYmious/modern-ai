@@ -1,0 +1,109 @@
+modern-ai/lab2/code on  main [✘+?] via 🐍 v3.13.17 (.venv) 
+❯ python main.py 10                                           
+[nltk_data] Downloading package punkt_tab to /home/fymio/nltk_data...
+[nltk_data]   Package punkt_tab is already up-to-date!
+[nltk_data] Downloading package wordnet to /home/fymio/nltk_data...
+[nltk_data]   Package wordnet is already up-to-date!
+[nltk_data] Downloading package brown to /home/fymio/nltk_data...
+[nltk_data]   Package brown is already up-to-date!
+[nltk_data] Downloading package names to /home/fymio/nltk_data...
+[nltk_data]   Package names is already up-to-date!
+[nltk_data] Downloading package movie_reviews to
+[nltk_data]     /home/fymio/nltk_data...
+[nltk_data]   Package movie_reviews is already up-to-date!
+[nltk_data] Downloading package stopwords to /home/fymio/nltk_data...
+[nltk_data]   Package stopwords is already up-to-date!
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+DatasetDict({
+    train: Dataset({
+        features: ['text', 'label'],
+        num_rows: 25000
+    })
+    test: Dataset({
+        features: ['text', 'label'],
+        num_rows: 25000
+    })
+    unsupervised: Dataset({
+        features: ['text', 'label'],
+        num_rows: 50000
+    })
+})
+train: 3600 val: 400 test: 1000
+Пример: This film is a travesty, and isn't fit to keep company with the superior original. The plot is an absolute mess, and the film is way too lo
+ng. Everytime they're struggling, they desperately inject a s | label = 0
+Loading weights: 100%|████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:00<00:00, 6586.02it/s]
+[transformers] DistilBertForSequenceClassification LOAD REPORT from: distilbert-base-uncased
+Key                     | Status     | 
+------------------------+------------+-
+vocab_transform.bias    | UNEXPECTED | 
+vocab_layer_norm.bias   | UNEXPECTED | 
+vocab_layer_norm.weight | UNEXPECTED | 
+vocab_projector.bias    | UNEXPECTED | 
+vocab_transform.weight  | UNEXPECTED | 
+classifier.bias         | MISSING    | 
+classifier.weight       | MISSING    | 
+pre_classifier.bias     | MISSING    | 
+pre_classifier.weight   | MISSING    | 
+
+Notes:
+- UNEXPECTED:   can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING:      those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+  0%|                                                                                                                     | 0/450 [00:00<?, ?it/s]/
+home/fymio/modern-ai/lab2/code/.venv/lib/python3.13/site-packages/torch/utils/data/dataloader.py:759: UserWarning: 'pin_memory' argument is set as 
+true but no accelerator is found, then device pinned memory won't be used.
+  super().__init__(loader)
+{'loss': '0.5516', 'grad_norm': '13.37', 'learning_rate': '1.782e-05', 'epoch': '0.2222'}                                                         
+{'loss': '0.376', 'grad_norm': '6.221', 'learning_rate': '1.56e-05', 'epoch': '0.4444'}                                                           
+{'loss': '0.3619', 'grad_norm': '10.91', 'learning_rate': '1.338e-05', 'epoch': '0.6667'}                                                         
+{'loss': '0.3039', 'grad_norm': '6.198', 'learning_rate': '1.116e-05', 'epoch': '0.8889'}                                                         
+{'eval_loss': '0.3145', 'eval_accuracy': '0.85', 'eval_f1': '0.8678', 'eval_runtime': '38.87', 'eval_samples_per_second': '10.29', 'eval_steps_per_
+second': '0.334', 'epoch': '1'}                                                                                                                   
+ 50%|█████████████████████████████████████████████████████▌                                                     | 225/450 [22:46<22:44,  6.06s/it]/
+home/fymio/modern-ai/lab2/code/.venv/lib/python3.13/site-packages/torch/utils/data/dataloader.py:759: UserWarning: 'pin_memory' argument is set as 
+true but no accelerator is found, then device pinned memory won't be used.
+  super().__init__(loader)
+{'loss': '0.3311', 'grad_norm': '13.62', 'learning_rate': '8.933e-06', 'epoch': '1.111'}                                                          
+{'loss': '0.2176', 'grad_norm': '4.71', 'learning_rate': '6.711e-06', 'epoch': '1.333'}                                                           
+{'loss': '0.2149', 'grad_norm': '1.278', 'learning_rate': '4.489e-06', 'epoch': '1.556'}                                                          
+{'loss': '0.208', 'grad_norm': '15.28', 'learning_rate': '2.267e-06', 'epoch': '1.778'}                                                           
+{'loss': '0.2212', 'grad_norm': '5.891', 'learning_rate': '4.444e-08', 'epoch': '2'}                                                              
+{'eval_loss': '0.3252', 'eval_accuracy': '0.8675', 'eval_f1': '0.8753', 'eval_runtime': '39.72', 'eval_samples_per_second': '10.07', 'eval_steps_pe
+r_second': '0.327', 'epoch': '2'}                                                                                                                 
+{'train_runtime': '2862', 'train_samples_per_second': '2.515', 'train_steps_per_second': '0.157', 'train_loss': '0.3096', 'epoch': '2'}           
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████| 450/450 [47:42<00:00,  6.36s/it]
+/home/fymio/modern-ai/lab2/code/.venv/lib/python3.13/site-packages/torch/utils/data/dataloader.py:759: UserWarning: 'pin_memory' argument is set as
+ true but no accelerator is found, then device pinned memory won't be used.
+  super().__init__(loader)
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████| 13/13 [00:36<00:00,  2.82s/it]
+
+validation metrics:
+  accuracy: 0.8675
+  f1: 0.8753
+/home/fymio/modern-ai/lab2/code/.venv/lib/python3.13/site-packages/torch/utils/data/dataloader.py:759: UserWarning: 'pin_memory' argument is set as
+ true but no accelerator is found, then device pinned memory won't be used.
+  super().__init__(loader)
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████| 32/32 [01:37<00:00,  3.03s/it]
+
+test metrics:
+  accuracy: 0.88
+  f1: 0.8812
+
+custom text predictions:
+
+Text: This movie was absolutely fantastic, I loved every minute of it!
+Label: POSITIVE, score: 0.9757
+
+Text: A complete waste of time. The plot made no sense and the acting was awful.
+Label: NEGATIVE, score: 0.9822
+
+Text: The film is fine, nothing special, but not bad either.
+Label: NEGATIVE, score: 0.8097
+
+Text: I expected much more from this director, what a disappointment.
+Label: NEGATIVE, score: 0.9445
+
+Text: Brilliant performances and a touching story, highly recommended.
+Label: POSITIVE, score: 0.9733
+
+Text: Not good. Not bad. Just boring.
+Label: NEGATIVE, score: 0.9749
